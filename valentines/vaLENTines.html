@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Loved+by+the+King&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      font-family: "Loved by the King", cursive;
+      justify-content: center;
+      height: 100vh;
+      margin-top: -16px;
+      transition: opacity 1s;
+    }
+
+    img {
+      height: 200px;
+      max-width: 100%; /* Ensures image scales down on small screens */
+    }
+
+    .text-4xl {
+      font-size: 2.25rem;
+      font-size: calc(1.75rem + 0.5rem * (100vw - 320px) / 680px); /* Responsive font size */
+    }
+
+    .my-4 {
+      margin-top: 1rem;
+      margin-bottom: 1rem;
+    }
+
+    .flex {
+      display: flex;
+    }
+
+    .items-center {
+      align-items: center;
+    }
+
+    .justify-center {
+      justify-content: center;
+    }
+
+    .h-screen {
+      height: 100vh;
+    }
+
+    .bg-green-500 {
+      background-color: #34d399;
+    }
+
+    .hover\:bg-green-700:hover {
+      background-color: #028A0F;
+    }
+
+    .text-white {
+      color: #fff;
+    }
+
+    .font-bold {
+      font-weight: bold;
+    }
+
+    .py-2 {
+      padding-top: 0.5rem;
+      padding-bottom: 0.5rem;
+    }
+
+    .px-4 {
+      padding-left: 1rem;
+      padding-right: 1rem;
+    }
+
+    .rounded {
+      border-radius: 0.375rem;
+    }
+
+    button {
+      margin-left: 1rem;
+    }
+
+    .bg-red-500 {
+      background-color: #ef4444;
+    }
+
+    .hover\:bg-red-700:hover {
+      background-color: #991b1b;
+    }
+
+    /* Media queries for different screen sizes */
+    @media (max-width: 768px) {
+      .text-4xl {
+        font-size: 1.5rem; /* Adjust font size for smaller screens */
+      }
+      .py-2,
+      .px-4 {
+        padding: 0.25rem; /* Reduce padding on smaller screens */
+      }
+    }
+
+    @media (max-width: 480px) {
+      .img {
+        height: 150px; /* Adjust image size for very small screens */
+      }
+    }
+  </style>
+</head>
+<body>
+  <img src="https://media.tenor.com/-wfX4Rj7a8oAAAAi/tkthao219-bubududu.gif" alt="Love bear gif">
+  <h1 class="text-4xl my-4">Will you be my Valentine?</h1>
+  <div class="flex">
+    <button
+      class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded mb-2"
+      style="font-size: 16px"
+      onclick="handleYesClick()"
+    >
+      Yes
+    </button>
+    <button
+      onclick="handleNoClick()"
+      class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded"
+    >
+      No
+    </button>
+  </div>
+  <script>
+    let noCount = 0;
+    let yesPressed = false;
+
+    const handleNoClick = () => {
+      noCount++;
+      updateNoButtonText();
+    };
+
+    const updateNoButtonText = () => {
+      const phrases = [
+        "No",
+        "nigger",
+        "Really sure?😢",
+        "Falki😨",
+        "Last chance!",
+        "miniscule penguin 😠",
+        "Tu mil mujhe wapsi!!!!",
+        "🥺dawg",
+        "👀👁dont be so sure short ass",
+        "😢😨itna zaleel ghar waalai na krte",
+        "bitch ass nigga ill kill you ",
+        "Don't be so cold🥺🥺🥺",
+        "😠😡😠espresso main mil kabhi mujhe wapas",
+        "😀😀reconsider",
+        "You sure 🥺🥺",
+        "You're breaking my heart😒",
+        "PLeSe my lil nigga🤧",
+      ];
+
+      const noButton = document.querySelector(".bg-red-500");
+      noButton.innerText = noCount === 0 ? "No" : phrases[Math.min(noCount, phrases.length - 1)];
+    };
+
+    const handleYesClick = () => {
+      fadeOutContent();
+      setTimeout(() => {
+        window.location.href = "https://www.youtube.com/watch?v=pkntWssHboY"; // Replace with your desired URL
+      }, 6000); // Redirect after 6 seconds
+    };
+
+    const fadeOutContent = () => {
+      document.body.style.opacity = 0;
+      setTimeout(() => {
+        document.body.innerHTML = '<h1 class="text-4xl my-4">I love you i hope we stay for as long as the stars count :)hope u like this hehe!</h1>';
+        document.body.style.opacity = 1;
+      }, 1000); // Wait for 1 second before fading in the new content
+    };
+  </script>
+</body>
+</html>

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      background-color: #f5f5f5;
+    }
+
+    .lock-container {
+      text-align: center;
+      background-color: #fff;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+      padding: 20px;
+      max-width: 300px;
+      width: 80%;
+      margin: auto;
+      box-sizing: border-box;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 10px;
+      font-size: 18px;
+    }
+
+    input {
+      padding: 10px;
+      margin-bottom: 10px;
+      width: calc(100% - 20px); /* Subtract padding and margin from the width */
+      box-sizing: border-box;
+      font-size: 16px;
+    }
+
+    button {
+      padding: 12px;
+      cursor: pointer;
+      background-color: #4CAF50;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      width: calc(100% - 20px); /* Subtract padding and margin from the width */
+      box-sizing: border-box;
+      font-size: 16px;
+    }
+
+    #statusMessage {
+      margin-top: 10px;
+      color: red;
+    }
+  </style>
+  <title>Code Lock</title>
+</head>
+<body>
+  <div class="lock-container">
+    <label for="codeInput">Enter the password heeh</label>
+    <input type="password" id="codeInput" maxlength="9">
+    <button onclick="checkCode()">enter the shit</button>
+    <p id="statusMessage"></p>
+  </div>
+
+  <script>
+    const correctCode = "24may2023";
+
+    function checkCode() {
+      const enteredCode = document.getElementById("codeInput").value;
+
+      if (enteredCode === correctCode) {
+        document.getElementById("statusMessage").textContent = "Code is correct. taking u to main shit";
+        // Redirect to another site after a short delay (2000 milliseconds in this example)
+        setTimeout(() => {
+          window.location.href = "vaLENTines.html"; // Replace with your desired URL
+        }, 2000);
+      } else {
+        document.getElementById("statusMessage").textContent = "bitch ass nigga its a date";
+      }
+    }
+  </script>
+</body>
+</html>
